@@ -1,0 +1,105 @@
+c{% extends 'payment/base.html' %}
+{% block content %}
+<style>
+    .main-container {
+        text-align: center;
+        margin-top: 90px;
+    }
+</style>
+<div class=' main-container'>
+    <form method="POST">
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script>
+            var options = {
+                key: "{{razorpay_key}}",
+                amount: "{{order.amount}}",
+                currency: "INR",
+                name: "{{order.name}}",
+                description: "Test Transaction",
+                image: "https://imgur.com/NOWiBu9",
+                order_id: "{{order.provider_order_id}}",
+                callback_url: "{{callback_url}}",
+                redirect: true,
+                prefill: {
+                    "name": "Rakesh Arelli",
+                    "email": "rakesharelli97@gmail.com",
+                    "contact": "9391050795"
+                },
+                notes: {
+                    "address": "Razorpay Corporate Office"
+                },
+                theme: {
+                    "color": "#3399cc"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+        </script>
+        <input type="hidden" custom="Hidden Element" name="hidden">
+    </form>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Document</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--    <h1>Payment Module</h1>-->
+<!--    ==================================<br />-->
+<!--    <br />-->
+<!--    <p>Amount: rs.{{amount}}</p>-->
+<!--    <button id="rzp-button1">Pay</button>-->
+<!--    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>-->
+<!--    <script>-->
+<!--        var options = {-->
+<!--            "key": "{{api_key}}", // Enter the Key ID generated from the Dashboard-->
+<!--            "name": "SparePartCentral Corp",-->
+<!--            "description": "In Development",-->
+<!--            "order_id": "{{order_id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1-->
+<!--            "prefill": {-->
+<!--                "name": "Rakesh Arelli",-->
+<!--                "email": "rakesharelli97@gmail.com",-->
+<!--                "contact": "9391050795"-->
+<!--            },-->
+<!--            "callback_url":"../{{callback_url}}/{{amou}}",-->
+<!--            "notes": {-->
+<!--                "address": "Razorpay Corporate Office"-->
+<!--            },-->
+<!--            "theme": {-->
+<!--                "color": "#3399cc"-->
+<!--            },-->
+<!--    //         "handler": function (response){-->
+<!--    //             window.location.href = "/home/";-->
+<!--    // },-->
+<!--        };-->
+<!--        var rzp1 = new Razorpay(options);-->
+<!--        rzp1.on('payment.failed', function (response) {-->
+<!--            alert(response.error.code);-->
+<!--            alert(response.error.description);-->
+<!--            alert(response.error.source);-->
+<!--            alert(response.error.step);-->
+<!--            alert(response.error.reason);-->
+<!--            alert(response.error.metadata.order_id);-->
+<!--            alert(response.error.metadata.payment_id);-->
+<!--        });-->
+<!--        document.getElementById('rzp-button1').onclick = function (e) {-->
+<!--            rzp1.open();-->
+<!--            e.preventDefault();-->
+<!--        }-->
+<!--    </script>-->
+<!--</body>-->
+
+<!--</html>-->

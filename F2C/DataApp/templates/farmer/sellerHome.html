@@ -1,0 +1,121 @@
+{% extends 'farmer/sellerNav.html' %}
+<!DOCTYPE html>
+{% load static %}
+{% block content%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Home</title>
+    <link rel="stylesheet" href="{% static 'app/css/home.css' %}">
+    <script src="https://kit.fontawesome.com/419dfd83c6.js" crossorigin="anonymous"></script>
+    <style>
+        .main-container{
+          text-align: center;
+          margin-top: 90px;
+        }
+        .sell-button {
+            height: 40px;
+            width: 130px;
+            border-radius: 10px;
+            background-color: rgb(255, 196, 0);
+            margin-right: 10px;
+        }
+        .btn-conatiner{
+            height: 35px;
+            width: 300px;
+            border-radius: 10px;
+            border-width: 0px;
+        }
+      </style>
+</head>
+
+<body>
+    <div class="home main-container">
+        <div class="d-flex flex-row justify-content-center blue-container ">
+            <div class="d-flex flex-column justify-content-center first-div m-5">
+                <h1 class="launch-heading">Launch your business in 10 minutes</h1>
+                <input type="email" name="email" placeholder="Enter your E-Mail Id" class="btn-conatiner"><br>
+                <br>
+                <a href="{% url 'farmerhome' %}" class="btn btn-warning sell-button">Start Selling</a>
+            </div>
+            <div class="d-flex flex-column justify-content-center">
+                <img src="{% static 'app/images/banner/h1.png' %}" class="img-container" alt="" height="500" width="300">
+            </div>
+            <div class="d-flex flex-column justify-content-center m-5">
+                <h1 class='sell-head'> sell online to 10 lakhs+ customers</h1>
+                <div class="d-flex flex-row justify-content-center ">
+                    <div class="m-5">
+                        <i class="fa fa-wallet icon"></i><br>
+                        <p class="para">7* day<br>payment</p>
+                    </div>
+                    <div class="m-5">
+                        <i class="fa fa-truck icon"></i><br>
+                        <p class="para">Pan-India<br>Delivery</p>
+                    </div>
+                    <div class="m-5">
+                        <i class="fa fa-handshake icon"></i><br>
+                        <p class="para">10000+<br>sellers</p>
+                    </div>
+                    <div class="m-5">
+                        <i class="fa fa-briefcase icon"></i><br>
+                        <p class="para">Account<br>Management</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-center">
+            <div class="d-flex flex-row justify-content-center mr-3">
+                <div class="m-3">
+                    <img src="{% static 'app/images/banner/hf1.jpg' %}" alt="" height="150" width="150">
+                </div>
+                <div class="f-review m-2">
+                    <p>"by the help of kisaan joy<br>
+                        i can sell my crops easily"</p>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row justify-content-center mr-3">
+                <div class=" m-3">
+                    <img src="{% static 'app/images/banner/hf1.jpg' %}" alt="" height="150" width="150">
+                </div>
+                <div class="f-review m-2">
+                    <p>"by the help of kisaan joy<br>
+                        i can sell my crops easily"</p>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row justify-content-center mr-3">
+                <div class=" m-3">
+                    <img src="{% static 'app/images/banner/hf1.jpg' %}" alt="" height="150" width="150">
+                </div>
+                <div class="f-review m-2">
+                    <p>"by the help of kisaan joy<br>
+                        i can sell my crops easily"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid bg-dark text-center p-2 mt-5 fixed-bottom">
+        <small class="text-white">Copyright &copy; 2023 || Designed Team 2 || </small>
+        <img src="{% static 'app/images/payment.png' %}" alt="" srcset="" class="img-fluid" height="2px">
+    </footer>
+</body>
+
+</html>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+{% extends 'farmer/sellerNav.html' %}
+<!DOCTYPE html>
+{% load static %}
+{% block content%}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <style>
+    .main-container {
+      text-align: center;
+      margin-top: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <form action="" method="post" novalidate class="shadow p-5" enctype="multipart/form-data">
+      {% if messages %}
+      {% for message in messages %}
+      <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>{% endfor %}
+      {% endif %}
+      {% csrf_token %}
+      {% for fm in form %}
+      <div class="form-group mb-3">
+        {{fm.label_tag}}{{fm}}
+      </div>
+      {% endfor %}
+      <input type="submit" value="Submit" class="btn btn-primary"><br>
+    </form>
+  </div>
+</body>
+
+</html>
+{% endblock %}

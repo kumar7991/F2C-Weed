@@ -1,0 +1,31 @@
+{% extends 'farmer/sellerNav.html' %}
+{% load static %}
+{% block content%}
+
+<style>
+  .main-container {
+    text-align: center;
+    margin-top: 90px;
+  }
+</style>
+<div class="main-container">
+
+  <form action="" method='Post' novalidate>
+    {% csrf_token %}
+    {% for fr in form %}
+    {{fr.label_tag}} {{fr}} {{fm.errors|striptags}} <br><br>
+    {% endfor %}
+    <input type="submit" value="SUBMIT">
+  </form>
+  {% if messages %}
+  {% for message in messages %}
+  <span {% if message.tags %} class='{{message.tags}}' {% endif %}>
+    {{message}}
+  </span>
+  {% endfor %}
+  {% endif %}
+
+  <a href="{% url 'farmerlogin' %}">Login</a>
+</div>
+
+{% endblock %}

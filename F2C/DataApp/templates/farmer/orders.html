@@ -1,0 +1,54 @@
+{% extends 'farmer/sellerNav.html' %} {% load static %} {% block content%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main-container {
+        text-align: center;
+        margin-top: 90px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <h5>Orders from customer</h5>
+
+      {% if products %}
+      <table>
+        {% for i in products %}
+        <tr>
+          <td>Order Id : {{i.id}}</td>
+        </tr>
+        <tr>
+          <td>Customer : {{i.customer}}</td>
+        </tr>
+        <tr>
+          <td>product : {{i.product}}</td>
+        </tr>
+        <tr>
+          <td>quantiry : {{i.quantiry}}</td>
+        </tr>
+        <tr>
+          <td>order_date : {{i.order_date}}</td>
+        </tr>
+        <tr>
+          <td>
+            <button class="btn btn-success btn-sm">
+              <a href="{% url 'dispatched' i.id %}">Dispatched</a>
+            </button>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      {% else %}
+      <h5>No Orders Received</h5>
+      {% endif %}
+    </div>
+  </body>
+</html>
+{% endblock %}

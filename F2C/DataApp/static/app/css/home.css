@@ -1,0 +1,52 @@
+.home {
+    margin-top: 60px;
+}
+.main-container{
+    text-align: center;
+    margin-top: 90px;
+  }
+.blue-container {
+    background-color: rgb(0, 166, 255);
+    
+}
+
+.launch-heading {
+    color: white;
+    font-size: 25px;
+}
+
+.sell-button {
+    height: 40px;
+    width: 130px;
+    border-radius: 10px;
+    background-color: rgb(255, 196, 0);
+    margin-right: 10px;
+}
+.sell-head{
+    color: rgb(255, 230, 0);
+    font-size: 25px;
+}
+.first-div{
+    margin-right: 50px;
+}
+.icon{
+    color: white;
+    font-size: 30px;
+}
+.icon:hover{
+    color: rgb(255, 196, 0);
+}
+.para{
+    color: white;
+    font-size: 15px;
+    padding-top: 10px;
+}
+.img-container{
+    margin-right: 50px;
+}
+.f-review {
+    columns: black;
+    font-family: 'roboto';
+    font-size: 20px;
+    font-weight: bold;
+}

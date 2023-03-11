@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+{% block main-content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br><br><br>
+    {% if status %}
+    <div class=" main-container">Your Order is {{status}} <br>
+    Go to cart  <a href="{% url 'showcart' %}">Click here</a> </div>
+    {% else %}
+    <div class=" main-container">Your Order is placed Successfully <br>
+    You want to track the Order <a href="{% url 'orders' %}">Click here</a> </div>
+    {% endif %}
+   
+</body>
+{% endblock main-content %}

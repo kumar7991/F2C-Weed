@@ -1,0 +1,53 @@
+{% extends 'farmer/sellerNav.html' %}
+<!DOCTYPE html>
+{% load static %}
+{% block content%}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .main-container {
+      text-align: center;
+      margin-top: 90px;
+    }
+
+    .btn-container {
+      height: 40px;
+      width: 130px;
+      border-radius: 10px;
+      margin-right: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class=" main-container">
+    <h6>Farmer Login</h6>
+    <form action="" method='post' novalidate>
+      {% csrf_token %}
+      {% if form.non_field_errors %}
+      {% for error in form.non_field_errors %}
+      <p class='er'>{{error}}</p>
+      {% endfor %}
+      {% endif %}
+      {% for f in fm %}
+      {{f.label_tag }} {{f}} {{f.errors|striptags}} <br><br>
+      {% endfor %}
+      <input type="submit" value="Login" class='btn btn-success'><br><br>
+      <a href="{% url 'farmerRegistration' %}" class="btn btn-warning">Signup</a>
+    </form>
+    <br>
+      <a href="{% url 'custfarm' %}" class="btn btn-primary">Already have account as a customer</a>
+    
+   
+  </div>
+
+</body>
+
+</html>
+{% endblock %}

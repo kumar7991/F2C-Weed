@@ -1,0 +1,18 @@
+{% extends 'app/base.html' %}
+{% load static %}
+<style>
+    .main-container {
+        text-align: center;
+        margin-top: 90px;
+    }
+</style>
+<div class="container main-container">
+    {% block title %}Empty Cart{% endblock title %}
+    {% block main-content %}
+    <div class="container my-5">
+        <div class="row">
+            <h1 class="text-center mb-5">Your cart have no item</h1>
+        </div>
+    </div>
+    {% endblock main-content %}
+</div>

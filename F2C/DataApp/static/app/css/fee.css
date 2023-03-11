@@ -1,0 +1,64 @@
+.head-container {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 35px;
+    background-color: rgb(99, 97, 97);
+
+}
+
+.head {
+    color: white;
+    font-weight: bold;
+    padding: 30px;
+    font-family: 'roboto';
+}
+
+.para-container {
+    padding: 30px;
+    background-color: white;
+    text-align: center;
+}
+
+.icon {
+    color: rgb(79, 156, 240);
+    font-size: 50px;
+    background-color: rgb(159, 213, 159);
+    border-radius: 25px;
+
+    height: 60px;
+}
+
+.para-icon {
+    padding-top: 17px;
+    padding-left: 40px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.para {
+    font-weight: lighter;
+    font-size: 17px;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.kjp {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 30px;
+    text-align: center;
+}
+
+.fee-container {
+    background-color: rgb(209, 209, 209);
+
+}
+
+.icons {
+    color: rgb(5, 46, 252);
+    background-color: rgb(149, 147, 147);
+    height: 100px;
+    width: 100px;
+}

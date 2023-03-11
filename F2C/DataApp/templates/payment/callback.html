@@ -1,0 +1,16 @@
+{% extends 'payment/base.html' %}
+<style>
+    .main-container{
+      text-align: center;
+      margin-top: 90px;
+    }
+  </style>
+{% block content %}
+<div class="text-center main-container" style="margin-top:20%">
+    {% if status == "Success" %}
+    <h2>THANKS YOUR PAYMENT HAS BEEN RECEIVED</h2>
+    {% else %}
+    <h2>SORRY, YOUR PAYMENT HAS BEEN FAILED</h2>
+    {% endif %}
+</div>
+{% endblock %}
